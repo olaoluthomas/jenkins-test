@@ -15,7 +15,7 @@ pipeline {
                         branches: [[name: '*/feature/cicd']],
                         userRemoteConfigs: [[
                             url: 'https://github.com/olaoluthomas/jenkins-test',
-                            credentialsId: 'github-path-for-jenkins'
+                            credentialsId: 'github-pat-for-jenkins'
                         ]]
                     ])
                 }
