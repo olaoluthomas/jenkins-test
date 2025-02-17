@@ -1,0 +1,8 @@
+LICENSE
+README.md
+tests/
+venv/
+.env
+.python-version
+.gitignore
+Jenkinsfile
