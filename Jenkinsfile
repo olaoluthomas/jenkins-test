@@ -2,10 +2,23 @@
 pipeline {
     agent any
 
+    options {
+        skipDefaultCheckout(true)
+    }
+
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                script {
+                    checkout([
+                        $class: 'GitSCM',
+                        branches: [[name: '*/feature/cicd']],
+                        userRemoteConfigs: [[
+                            url: 'https://github.com/olaoluthomas/jenkins-test',
+                            credentialsId: 'github-path-for-jenkins'
+                        ]]
+                    ])
+                }
             }
         }
         
